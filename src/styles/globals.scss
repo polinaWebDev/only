@@ -1,0 +1,30 @@
+@use "../styles/mixins" as *;
+
+html,
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  scrollbar-color: var(--color-additional) var(--color-dark);
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  font-size: 16px;
+  font-family: var(--font-family-base);
+  color: var(--color-dark);
+  font-weight: 400;
+  background-color: var(--color-gray);
+}
+
+button {
+  @include reset-button;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}

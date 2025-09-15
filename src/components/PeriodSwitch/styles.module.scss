@@ -1,0 +1,82 @@
+@use "@/styles/functions" as *;
+@use "@/styles/mixins" as *;
+
+.period {
+  @include flex-center;
+  position: relative;
+
+  &Years {
+    @include abs-center;
+    @include flex-center;
+    gap: clamp(2.5rem, 2rem + 2.5vw, 5rem);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    z-index: 10;
+
+    @media screen and (max-width: 768px) {
+      top: 30%;
+    }
+  }
+
+  &Title {
+    position: absolute;
+    bottom: 50%;
+    left: clamp(0.063rem, -1.733rem + 8.98vw, 5rem);
+    padding-bottom: rem(20);
+    display: none;
+
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+  }
+
+  &Navigation {
+    position: absolute;
+    left: clamp(0.063rem, -1.733rem + 8.98vw, 5rem);
+    bottom: rem(60);
+    z-index: 10;
+
+    @media screen and (max-width: 768px) {
+      bottom: rem(-30);
+    }
+  }
+
+  &Counter {
+    font-size: 14px;
+    margin-bottom: rem(20);
+
+    @media screen and (max-width: 768px) {
+      margin-bottom: rem(10);
+    }
+  }
+
+  &Buttons {
+    @include flex-center;
+    gap: rem(20);
+
+    @media screen and (max-width: 768px) {
+      gap: rem(8);
+    }
+  }
+
+  &Button {
+    @include square(clamp(1.563rem, 1.25rem + 1.56vw, 3.125rem));
+    @include flex-center;
+    border: 1px solid var(--color-dark-50);
+    border-radius: 50%;
+    transition: background-color var(--transition-duration);
+    color: var(--color-dark);
+
+    &:hover {
+      background-color: var(--color-light);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: auto;
+    }
+  }
+}

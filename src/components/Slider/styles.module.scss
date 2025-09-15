@@ -1,0 +1,78 @@
+@use "@/styles/functions" as *;
+@use "@/styles/mixins" as *;
+
+.wrapper {
+  position: relative;
+  padding-inline: clamp(0.063rem, -1.733rem + 8.98vw, 5rem);
+}
+
+.slider {
+  --swiper-pagination-bottom: 52px;
+
+  width: 100%;
+  cursor: grab;
+  padding-top: rem(20);
+
+  @media screen and (max-width: 768px) {
+    height: 50vh;
+  }
+}
+
+.slide {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: rem(15);
+
+  &Title {
+    font-family: var(--font-family-accent);
+    font-size: rem(25);
+    color: var(--color-accent);
+  }
+
+  &Description {
+    font-size: rem(20);
+
+    @media screen and (max-width: 1370px) {
+      font-size: rem(16);
+    }
+
+    @media screen and (max-width: 576px) {
+      font-size: rem(14);
+    }
+  }
+}
+
+.button {
+  @include square(clamp(1.25rem, 0.795rem + 2.27vw, 2.5rem));
+  @include flex-center;
+  background-color: var(--color-light);
+  border-radius: 50%;
+  font-weight: 700;
+  -webkit-filter: drop-shadow(0 0 15px rgba(56, 119, 238, 0.1));
+  filter: drop-shadow(0 0 15px rgba(56, 119, 238, 0.1));
+  color: var(--color-accent);
+  display: block;
+  transition: opacity var(--transition-duration);
+
+  &Prev {
+    position: absolute;
+    @include abs-y;
+    left: clamp(0.063rem, -0.369rem + 2.16vw, 1.25rem);
+  }
+
+  &Next {
+    position: absolute;
+    @include abs-y;
+    right: clamp(0.063rem, -0.369rem + 2.16vw, 1.25rem);
+  }
+
+  &:disabled {
+    opacity: 0;
+    cursor: auto;
+  }
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}

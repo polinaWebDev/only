@@ -1,0 +1,26 @@
+@use "../styles/functions" as *;
+
+:root {
+  --color-light: #ffffff;
+
+  --color-dark: #42567a;
+  --color-dark-10: rgba(66, 86, 122, 0.1);
+  --color-dark-20: rgba(66, 86, 122, 0.2);
+  --color-dark-50: rgba(66, 86, 122, 0.5);
+  --color-gray: #f4f5f9;
+
+  --color-accent: #3877ee;
+
+  --color-iris-100: #5d5fef;
+  --color-fuschia-100: #ef5da8;
+
+  --border: #{rem(1)} solid var(--color-dark-15);
+
+  --font-family-base: "PT Sans", sans-serif;
+  --font-family-accent: "Bebas Neue", sans-serif;
+
+  --container-width: #{rem(1640)};
+  --container-padding-x: #{rem(20)};
+
+  --transition-duration: 0.3s;
+}

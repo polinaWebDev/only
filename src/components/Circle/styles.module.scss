@@ -1,0 +1,54 @@
+@use "@/styles/mixins" as *;
+@use "@/styles/functions" as *;
+
+.circle {
+  @include square(clamp(21.875rem, 19.625rem + 11.25vw, 33.125rem));
+  border: 1px solid var(--color-dark-20);
+  border-radius: 50%;
+  position: relative;
+  transform-origin: center center;
+  will-change: transform;
+  z-index: 20;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+
+  &Button {
+    @include square(rem(56));
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid var(--color-dark-50);
+    background-color: var(--color-dark);
+    color: var(--color-dark);
+    font-size: rem(20);
+    scale: 0.1;
+    transition:
+      scale var(--transition-duration),
+      background-color var(--transition-duration),
+      transform var(--transition-duration);
+
+    &Text {
+      position: absolute;
+      left: 100%;
+      padding-left: rem(20);
+      font-weight: 700;
+      opacity: 0;
+      transition: opacity 0.5s linear 0.2s;
+
+      &Active {
+        opacity: 1;
+      }
+    }
+
+    &:hover {
+      scale: 1;
+      background-color: var(--color-gray);
+    }
+  }
+}
+
+.active {
+  scale: 1;
+  background-color: var(--color-gray);
+}

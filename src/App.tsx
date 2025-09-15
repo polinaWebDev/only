@@ -1,3 +1,13 @@
+import { PeriodProvider } from '@/shared/provider/PeriodProvider';
+import { PeriodSwitchSection } from '@/components';
+import "@/styles/index.scss";
+
 export const App = () => {
-  return <main>test</main>;
+  return (
+    <main>
+      <PeriodProvider>
+        <PeriodSwitchSection />
+      </PeriodProvider>
+    </main>
+  );
 };

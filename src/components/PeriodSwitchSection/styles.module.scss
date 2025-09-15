@@ -1,0 +1,86 @@
+@use "@/styles/functions" as *;
+@use "@/styles/mixins" as *;
+
+.section {
+  &Wrapper {
+    min-height: 100vh;
+    max-width: rem(1440);
+    margin-left: auto;
+    border-right: 1px solid var(--color-dark-10);
+    border-left: 1px solid var(--color-dark-10);
+    position: relative;
+    overflow: hidden;
+    @include flex-center;
+
+    &::before {
+      content: "";
+      width: 1px;
+      height: 100%;
+      background-color: var(--color-dark-10);
+      @include abs-x;
+
+      @media screen and (max-width: 768px) {
+        opacity: 0;
+      }
+    }
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 1px;
+      background-color: var(--color-dark-10);
+      @include abs-y;
+    }
+
+    @media screen and (max-width: 576px) {
+      border: none;
+    }
+  }
+
+  &Content {
+    height: clamp(34.375rem, 32.33rem + 10.23vw, 40rem);
+    width: 100%;
+    position: relative;
+  }
+
+  &Title {
+    font-size: clamp(1.25rem, 0.8rem + 2.25vw, 3.5rem);
+    line-height: 1.2;
+    padding-left: clamp(0.063rem, -1rem + 5.31vw, 5.375rem);
+    position: relative;
+
+    &::before {
+      content: "";
+      width: rem(5);
+      height: 90%;
+      background-image: linear-gradient(
+        to bottom,
+        var(--color-accent),
+        var(--color-fuschia-100)
+      );
+      @include abs-y;
+      left: 0;
+
+      @media screen and (max-width: 768px) {
+        opacity: 0;
+      }
+    }
+  }
+
+  &Period {
+    position: absolute;
+    inset: 0;
+  }
+
+  &Slider {
+    position: absolute;
+    left: 0;
+    bottom: rem(10);
+    width: 100%;
+
+    @media screen and (max-width: 768px) {
+      top: 50%;
+      bottom: rem(32);
+    }
+  }
+}
