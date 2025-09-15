@@ -1,7 +1,7 @@
-import { forwardRef, useEffect, useRef, useState } from "react";
-import clsx from "clsx";
-import { IDate } from "@/types";
-import styles from "./styles.module.scss";
+import { forwardRef, useEffect, useRef, useState } from 'react';
+import clsx from 'clsx';
+import { IDate } from '@/types';
+import styles from './styles.module.scss';
 import { usePeriod } from '@/hooks/usePeriod';
 import { useRotateCircle } from '@/hooks/useRotateCircle';
 
@@ -20,7 +20,11 @@ export const Circle = forwardRef<HTMLDivElement, CircleProps>(
     const innerRef = useRef<HTMLDivElement>(null);
     const circleRef = (ref as React.RefObject<HTMLDivElement>) ?? innerRef;
 
-    const rotateToIndex = useRotateCircle(datesList.length, circleRef, setRotation);
+    const rotateToIndex = useRotateCircle(
+      datesList.length,
+      circleRef,
+      setRotation
+    );
 
     useEffect(() => {
       if (!circleRef.current) return;
@@ -53,7 +57,10 @@ export const Circle = forwardRef<HTMLDivElement, CircleProps>(
             return (
               <button
                 key={i}
-                className={clsx(styles.circleButton, activeIndex === i && styles.active)}
+                className={clsx(
+                  styles.circleButton,
+                  activeIndex === i && styles.active
+                )}
                 style={{
                   left: `${x}px`,
                   top: `${y}px`,
@@ -64,7 +71,7 @@ export const Circle = forwardRef<HTMLDivElement, CircleProps>(
                   setActiveIndex(i);
                 }}
               >
-                {i + 1}{" "}
+                {i + 1}{' '}
                 <span
                   className={clsx(
                     styles.circleButtonText,
@@ -81,4 +88,4 @@ export const Circle = forwardRef<HTMLDivElement, CircleProps>(
   }
 );
 
-Circle.displayName = "Circle";
+Circle.displayName = 'Circle';

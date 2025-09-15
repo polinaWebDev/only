@@ -1,11 +1,11 @@
-import { useLayoutEffect, useRef, useState } from "react";
-import clsx from "clsx";
-import gsap from "gsap";
-import { Circle, PeriodYears } from "@/components";
-import { IDate } from "@/types";
-import { usePeriod, useRotateCircle } from "@/hooks";
+import { useLayoutEffect, useRef, useState } from 'react';
+import clsx from 'clsx';
+import gsap from 'gsap';
+import { Circle, PeriodYears } from '@/components';
+import { IDate } from '@/types';
+import { usePeriod, useRotateCircle } from '@/hooks';
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss';
 
 interface PeriodSwitchProps {
   datesList: IDate[];
@@ -17,7 +17,11 @@ export const PeriodSwitch = ({ datesList, className }: PeriodSwitchProps) => {
   const [rotation, setRotation] = useState(0);
   const circleRef = useRef<HTMLDivElement>(null);
   const themeTitleRef = useRef<HTMLHeadingElement>(null);
-  const rotateToIndex = useRotateCircle(datesList.length, circleRef, setRotation);
+  const rotateToIndex = useRotateCircle(
+    datesList.length,
+    circleRef,
+    setRotation
+  );
 
   useLayoutEffect(() => {
     if (!themeTitleRef.current) return;
@@ -26,7 +30,7 @@ export const PeriodSwitch = ({ datesList, className }: PeriodSwitchProps) => {
       gsap.fromTo(
         themeTitleRef.current,
         { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.6, ease: "power1" }
+        { opacity: 1, y: 0, duration: 0.6, ease: 'power1' }
       );
     }, themeTitleRef);
 
@@ -69,14 +73,14 @@ export const PeriodSwitch = ({ datesList, className }: PeriodSwitchProps) => {
             disabled={activeIndex === 0}
             onClick={handleClickPrev}
           >
-            {"<"}
+            {'<'}
           </button>
           <button
             className={styles.periodButton}
             disabled={activeIndex === datesList.length - 1}
             onClick={handleClickNext}
           >
-            {">"}
+            {'>'}
           </button>
         </div>
       </div>

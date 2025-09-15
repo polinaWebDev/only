@@ -1,5 +1,5 @@
-import { useRef } from "react";
-import gsap from "gsap";
+import { useRef } from 'react';
+import gsap from 'gsap';
 
 export const useRotateCircle = (
   datesCount: number,
@@ -24,7 +24,7 @@ export const useRotateCircle = (
     gsap.to(circleRef.current, {
       rotation: newRotation,
       duration: 1,
-      ease: "power2.inOut",
+      ease: 'power2.inOut',
       onUpdate: () => {
         onRotate?.(rotationRef.current);
       },

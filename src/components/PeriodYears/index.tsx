@@ -1,7 +1,7 @@
-import { useGsapCounter } from "@/hooks";
-import { IDate } from "@/types";
+import { useGsapCounter } from '@/hooks';
+import { IDate } from '@/types';
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss';
 
 interface PeriodYearsProps {
   activeIndex: number;
@@ -11,7 +11,7 @@ interface PeriodYearsProps {
 export const PeriodYears = ({ datesList, activeIndex }: PeriodYearsProps) => {
   const displayStart = useGsapCounter(datesList[activeIndex].periodStart);
   const displayEnd = useGsapCounter(datesList[activeIndex].periodEnd);
-  
+
   return (
     <>
       <h2 className={styles.start}>{displayStart}</h2>

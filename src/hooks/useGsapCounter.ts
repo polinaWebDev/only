@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { gsap } from "gsap";
+import { useEffect, useRef, useState } from 'react';
+import { gsap } from 'gsap';
 
 export const useGsapCounter = (targetValue: number, duration = 0.8) => {
   const [displayValue, setDisplayValue] = useState(targetValue);
@@ -9,7 +9,7 @@ export const useGsapCounter = (targetValue: number, duration = 0.8) => {
     gsap.to(ref.current, {
       value: targetValue,
       duration,
-      ease: "power1.out",
+      ease: 'power1.out',
       onUpdate: () => setDisplayValue(Math.round(ref.current.value)),
     });
   }, [targetValue, duration]);

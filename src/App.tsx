@@ -1,6 +1,6 @@
 import { PeriodProvider } from '@/shared/provider/PeriodProvider';
 import { PeriodSwitchSection } from '@/components';
-import "@/styles/index.scss";
+import '@/styles/index.scss';
 
 export const App = () => {
   return (

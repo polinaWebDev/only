@@ -1,15 +1,15 @@
-import { useLayoutEffect, useRef } from "react";
-import gsap from "gsap";
-import clsx from "clsx";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
-import { IDate } from "@/types";
-import { usePeriod } from "@/hooks";
+import { useLayoutEffect, useRef } from 'react';
+import gsap from 'gsap';
+import clsx from 'clsx';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import { IDate } from '@/types';
+import { usePeriod } from '@/hooks';
 
-import "swiper/css";
-import "swiper/css/pagination";
+import 'swiper/css';
+import 'swiper/css/pagination';
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss';
 
 interface SliderProps {
   datesList: IDate[];
@@ -26,7 +26,7 @@ export const Slider = ({ datesList }: SliderProps) => {
       gsap.fromTo(
         sliderRef.current,
         { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.5, delay: 0.5, ease: "power1" }
+        { opacity: 1, y: 0, duration: 0.5, delay: 0.5, ease: 'power1' }
       );
     }, sliderRef);
 
@@ -79,8 +79,8 @@ export const Slider = ({ datesList }: SliderProps) => {
         </Swiper>
       </div>
 
-      <button className={clsx(styles.button, styles.buttonPrev)}>{"<"}</button>
-      <button className={clsx(styles.button, styles.buttonNext)}>{">"}</button>
+      <button className={clsx(styles.button, styles.buttonPrev)}>{'<'}</button>
+      <button className={clsx(styles.button, styles.buttonNext)}>{'>'}</button>
     </div>
   );
 };

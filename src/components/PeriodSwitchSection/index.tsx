@@ -1,5 +1,5 @@
-import { Container, PeriodSwitch, Slider } from "@/components";
-import styles from "./styles.module.scss";
+import { Container, PeriodSwitch, Slider } from '@/components';
+import styles from './styles.module.scss';
 import { historicalDates } from '@/shared/constants/periods';
 
 export const PeriodSwitchSection = () => {
@@ -13,7 +13,10 @@ export const PeriodSwitchSection = () => {
                 Исторические <br /> даты
               </h1>
             </header>
-            <PeriodSwitch className={styles.sectionPeriod} datesList={historicalDates} />
+            <PeriodSwitch
+              className={styles.sectionPeriod}
+              datesList={historicalDates}
+            />
           </div>
           <div className={styles.sectionSlider}>
             <Slider datesList={historicalDates} />

@@ -1,11 +1,13 @@
-import { createContext, PropsWithChildren, useState } from "react";
+import { createContext, PropsWithChildren, useState } from 'react';
 
 type PeriodContextValue = {
   activeIndex: number;
   setActiveIndex: (index: number) => void;
 };
 
-export const PeriodContext = createContext<PeriodContextValue | undefined>(undefined);
+export const PeriodContext = createContext<PeriodContextValue | undefined>(
+  undefined
+);
 
 export const PeriodProvider = ({ children }: PropsWithChildren) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -16,4 +18,3 @@ export const PeriodProvider = ({ children }: PropsWithChildren) => {
     </PeriodContext.Provider>
   );
 };
-
